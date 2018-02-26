@@ -94,8 +94,8 @@ App = {
         // Execute adopt as a transaction by sending account
         return adoptionInstance.adopt(petId, {from: account});
       }).then(function(result) {
-        returnApp.markAdopted();
-      })catch(function(err) {
+        return App.markAdopted();
+      }).catch(function(err) {
         console.log(err.message);
       });
     });
